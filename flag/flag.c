@@ -1,8 +1,9 @@
 // Flag of India
+
 #include <stdio.h>
 #include <graphics.h>
 #include <math.h>
-// #include <time.h>
+
 void DDAdraw(int, int, int, int, int);
 void calcPoints(int, int, int, int *, int *);
 void main()
@@ -24,11 +25,15 @@ void main()
     circle(300, 110, 30);
   }
   // For the bars of the circle
-  calcPoints(30, 300, 110, x, y);
-  for (i = 0; i < 12; i++)
+  // calcPoints(30, 300, 110, x, y);
+  int xtop=300,ytop=100;
+  int theta;
+  for (i = 0; i < 2; i++)
   {
-     if (i % 2 == 0)
-        line(300,110, x[i], y[i]);
+    //  if (i % 2 == 0)
+    theta=90 - (i*15);
+    line(300,110, xtop+ (30 * sin (theta)) , ytop+ (30 * cos(theta)) );
+
    }
 
 delay(2000);
@@ -85,6 +90,7 @@ void DDAdraw(int x1, int y1, int x_n, int y_n, int k)
 }
 
 // For finding the points at 0, 30, 60...360 degrees
+// The sine and cosine values are used
 void calcPoints(int radius, int midx, int midy, int x[12], int y[12])
 {
       // midx= x coordinate of circle
