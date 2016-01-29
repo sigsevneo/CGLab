@@ -4,14 +4,13 @@
 #include <graphics.h>
 #include <math.h>
 
-#define PI 3.14159265
-
-// void DDAdraw(int, int, int, int, int);
+// Used here
 void BresenhamDrawLine(int, int, int, int, int);
+void DrawCircle(int, int, int);
+
+// Unused here
 void BresenhamDrawCircle(int, int, int);
 void drawCircle(int, int, int, int);
-void bhm_line(int, int, int, int, int);
-void DrawCircle(int, int, int);
 
 void main()
 {
@@ -21,39 +20,41 @@ void main()
 
   //1st figure
   DrawCircle(50,50,25);
-  bhm_line(50, 75, 50, 125,10);
-  bhm_line(10, 75, 40, 75,10);
-  bhm_line(40, 75, 90, 75,10);
+  BresenhamDrawLine(50, 75, 50, 125,10);
+  BresenhamDrawLine(10, 75, 40, 75,10);
+  BresenhamDrawLine(40, 75, 90, 75,10);
   // Hands and body done
 
-  bhm_line(50, 125, 90, 175,10);
-  bhm_line(10,175,50,125,10);
+  BresenhamDrawLine(50, 125, 90, 175,10);
+  BresenhamDrawLine(10,175,50,125,10);
   // Legs done
 
   //2nd figure
   DrawCircle(150,50,25);
-  bhm_line(150, 75, 150, 125,10);
-  //Body done
-  bhm_line(110, 75, 150, 100,10);
-  bhm_line(150,100,190,75,10);
+  BresenhamDrawLine(150, 75, 150, 125,10);
+  // Body done
+
+  BresenhamDrawLine(110, 75, 150, 100,10);
+  BresenhamDrawLine(150,100,190,75,10);
 
   // Hands done
 
-  bhm_line(150, 125, 190, 165,10);
-  bhm_line(110,165,150,125,10);
+  BresenhamDrawLine(150, 125, 190, 165,10);
+  BresenhamDrawLine(110,165,150,125,10);
   // Legs done
 
-  //3rdd figure
+  //3rd figure
   DrawCircle(250,50,25);
-  bhm_line(250, 75, 250, 125,10);
-  //Body done
-  bhm_line(210, 100, 250, 75,10);
-  bhm_line(250,75,290,100,10);
+  BresenhamDrawLine(250, 75, 250, 125,10);
+
+  // Body done
+  BresenhamDrawLine(210, 100, 250, 75,10);
+  BresenhamDrawLine(250,75,290,100,10);
 
   // Hands done
 
-  bhm_line(250, 125, 290, 165,10);
-  bhm_line(210,165,250,125,10);
+  BresenhamDrawLine(250, 125, 290, 165,10);
+  BresenhamDrawLine(210,165,250,125,10);
   // Legs done
 
 
@@ -62,6 +63,7 @@ void main()
   delay(5000);
 }
 
+// Bresenham's Circle Drawing Algorithm
 void BresenhamDrawCircle(int xc, int yc, int r)
 {
   int x = 0, y = r;
@@ -81,6 +83,8 @@ void BresenhamDrawCircle(int xc, int yc, int r)
         // delay(50);
   }
 }
+
+// Used for Bresenham's circle drawing algorithm
 void drawCircle(int xc, int yc, int x, int y)
 {
     putpixel(xc+x, yc+y, RED);
@@ -93,6 +97,7 @@ void drawCircle(int xc, int yc, int x, int y)
     putpixel(xc-y, yc-x, RED);
 }
 
+// Midpoint Algorithm for drawing Circles
 void DrawCircle(int x0, int y0, int radius)
 {
   int x = radius;
@@ -122,8 +127,8 @@ void DrawCircle(int x0, int y0, int radius)
   }
 }
 
-// Takes care of all the cases
-void bhm_line(int x1,int y1,int x2,int y2,int c)
+// Takes care of all the cases - Bresenham's Line Drawing Algorithm
+void BresenhamDrawLine(int x1,int y1,int x2,int y2,int c)
 {
  int x,y,dx,dy,dx1,dy1,px,py,xe,ye,i;
  dx=x2-x1;
