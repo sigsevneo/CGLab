@@ -15,33 +15,33 @@ int main()
 			 for(j=0;j<10;j++)
 			 {
 
-				line(200+j, 300, 300+j, 300);
-				line(280+j, 200, 380+j, 200);
-				line(200+j, 300, 280+j, 200);
-				line(300+j, 300, 380+j, 200);
-				line(276+j, 180, 300+j, 300);
-				line(400+j, 300, 370+j, 150);
-				line(300+j, 110, 276+j, 180);
-				line(290+j, 125, 385+j, 150);
-				line(290+j, 125, 355+j, 150);
-				line(270+j, 280, 276+j, 180);
-				line(330+j, 260, 276+j, 180);
+				line(200+j, 300+j, 300+j, 300+j);
+				line(280+j, 200+j, 380+j, 200+j);
+				line(200+j, 300+j, 280+j, 200+j);
+				line(300+j, 300+j, 380+j, 200+j);
+				line(276+j, 180+j, 300+j, 300+j);
+				line(400+j, 300+j, 370+j, 150+j);
+				line(300+j, 110+j, 276+j, 180+j);
+				line(290+j, 125+j, 385+j, 150+j);
+				line(290+j, 125+j, 355+j, 150+j);
+				line(270+j, 280+j, 276+j, 180+j);
+				line(330+j, 260+j, 276+j, 180+j);
 				for(i=175;i<290;i++)
-				 line(256+j, i, 296+j, i);
+				 line(256+j, i+j, 296+j, i+j);
 
 				for(i=145;i<190;i++)
-	 			line(355+j, i, 385+j, i);
+	 			line(355+j, i+j, 385+j, i+j);
 
-				circle(200+j, 300, 50);
-				circle(400+j, 300, 50);
-				circle(300+j, 90, 20);
+				circle(200+j, 300+j, 50);
+				circle(400+j, 300+j, 50);
+				circle(300+j, 90+j, 20);
 
 				float theta = 2*3.141592*15/260;
 				for(i=0;i<20;++i)
-      	 			line(200+j,300,200+(50*cos(i*theta))+j,300+(50*sin(i*theta)));
+      	 			line(200+j,300+j,200+(50*cos(i*theta))+j,j+300+(50*sin(i*theta)));
 
 				for(i=0;i<20;++i)
-      	 			line(400+j,300,400+(50*cos(i*theta))+j,300+(50*sin(i*theta)));
+      	 			line(400+j,300+j,400+(50*cos(i*theta))+j,j+300+(50*sin(i*theta)));
 				delay(250);
 				cleardevice();
 			}
