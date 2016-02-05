@@ -6,7 +6,7 @@ int main()
 {
 	int gd=DETECT, gm, i, j, choice;
 	float a, b;
-	printf("1. Translate the cylce\n2. Rotate the cycle\n3. Scale the cycle\nEnter choice : ");
+	printf("1. Translate the cycle\n2. Rotate the cycle\n3. Scale the cycle\nEnter choice : ");
 	scanf("%d",&choice);
 
 	switch(choice)
@@ -49,8 +49,12 @@ int main()
 
 		case 2 : initgraph(&gd, &gm, NULL);
 			 float an = 10*3.141592/180;
+			 // Uncomment to take user input for rotation
 
-			 //Display the initial image of the cycle
+			//  printf("\nEnter angle:");
+			//  scanf("%f",&an);
+
+			  //Display the initial image of the cycle
 				line(200, 300, 300, 300);
 				line(280, 200, 380, 200);
 				line(200, 300, 280, 200);
@@ -73,7 +77,7 @@ int main()
 				circle(300, 90, 20);
 
 				// Display the spokes
-				theta = 2*3.141592*15/260;
+				float theta = 2*3.141592*15/260;
 				for(i=0;i<20;++i)
      			 	 line(200,300,200+(50*cos(i*theta)),300+(50*sin(i*theta)));
 
@@ -144,7 +148,7 @@ int main()
 					 circle(300, 90, 20);
 
 					 // Displaying the spokes
-					 float theta = 2*3.141592*15/260;
+					 theta = 2*3.141592*15/260;
 					 for(i=0;i<20;++i)
 									line(200,300,200+(50*cos(i*theta)),300+(50*sin(i*theta)));
 
