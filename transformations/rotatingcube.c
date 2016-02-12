@@ -54,10 +54,10 @@ int main()
 	y1=y+50;
 
 	initgraph(&gd, &gm, NULL);
-	for(i=0;i<20;i++){
+	for(i=0;i<800;i++){
 		cleardevice();
 		drawCube(x,y,x1,y1,i/80.0);
-		delay(35);
+		delay(15);
 	}
 	delay(1000);
 	closegraph();
