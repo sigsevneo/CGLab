@@ -39,12 +39,11 @@ drawCube(int x, int y, int x1, int y1, float angle){
 	setcolor(YELLOW);
 	fillpoly(5, points4);
 
-	setcolor(12);
+	setcolor(LIGHTRED);
 	fillpoly(5, points5);
 
 	setcolor(GREEN);
 	fillpoly(5, points6);
-
 
 }
 int main()
@@ -57,7 +56,7 @@ int main()
 	for(i=0;i<800;i++){
 		cleardevice();
 		drawCube(x,y,x1,y1,i/80.0);
-		delay(15);
+		delay(0.1);
 	}
 	delay(1000);
 	closegraph();
