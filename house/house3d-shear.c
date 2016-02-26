@@ -1,6 +1,6 @@
-#include<graphics.h>
-#include<stdio.h>
-#include<math.h>
+#include <graphics.h>
+#include <stdio.h>
+#include <math.h>
 
 int main()
 {
@@ -17,6 +17,8 @@ int main()
   int py[16];
   px[0]=0;
   py[0]=0;
+
+
   setlinestyle(SOLID_LINE,0,1);
   line(x[1],y[1],x[2],y[2]);
   line(x[2],y[2],x[3],y[3]);
@@ -39,14 +41,16 @@ int main()
   line(x[13],y[13],x[14],y[14]);
   line(x[6],y[6],x[14],y[14]);
   line(x[14],y[14],x[4],y[4]);
-  //line(x[3],y[3],x[15],y[15]);
   line(x[3],y[3],x[13],y[13]);
 
+  // Shear values
   float shx,shy;
   printf("\nEnter value of X-shear : ");
   scanf("%f",&shx);
   printf("\nEnter value of Y-shear : ");
   scanf("%f",&shy);
+
+  // Reference Point
   int xdiff=x[2], ydiff=y[2];
 
   int i;
@@ -71,9 +75,9 @@ int main()
     y[i]=py[i]+ydiff;
   }
 
-
-
   cleardevice();
+
+  // Begin the modified house
   setlinestyle(SOLID_LINE,0,1);
   line(x[1],y[1],x[2],y[2]);
   line(x[2],y[2],x[3],y[3]);
@@ -89,13 +93,14 @@ int main()
   line(x[9],y[9],x[11],y[11]);
   line(x[10],y[10],x[12],y[12]);
   line(x[9],y[9],x[10],y[10]);
+
+  // Begin the dotted lined portion
   setlinestyle(DOTTED_LINE, 0, 1);
   line(x[7],y[7],x[13],y[13]);
   line(x[2],y[2],x[13],y[13]);
   line(x[13],y[13],x[14],y[14]);
   line(x[6],y[6],x[14],y[14]);
   line(x[14],y[14],x[4],y[4]);
-  //line(x[3],y[3],x[15],y[15]);
   line(x[3],y[3],x[13],y[13]);
 
   delay(5000);
